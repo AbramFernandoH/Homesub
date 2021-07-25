@@ -1,0 +1,118 @@
+.bingkaii {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+.latarBerlian {
+    background: url(RiverReq.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.latarBerlian h3 {
+    color: rgb(255, 154, 21);
+}
+
+.berlian-grid {
+    width: 80%;
+    margin: 0 230px;
+}
+
+.bagian {
+    width: 210px;
+    height: 210px;
+    opacity: 0.5;
+    transition: 0.5s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 30px 30px rgba(0,0,0,.5);
+}
+
+.bg1{
+    background: red;
+}
+
+.bg2{
+    background: green;
+}
+
+.bg3{
+    background: rgb(233, 233, 0);
+}
+
+.bg4{
+    background: blue;
+}
+
+.bg5{
+    background: palevioletred;
+}
+
+.bg6{
+    background: peru;
+}
+
+.bg7{
+    background: lightslategray;
+}
+
+.bg8{
+    background: rgb(196, 141, 196);
+}
+
+.bg9{
+    background: rgb(133, 219, 133);
+}
+
+.bg10{
+    background: rgb(151, 188, 201);
+}
+
+.bg11{
+    background: salmon;
+}
+
+.bagian a {
+    color: white;
+    text-decoration: none;
+    top: -50px;
+    font-weight: 600;
+}
+
+.bagian:hover {
+    opacity: 1;
+}
+
+/* .item img {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%) scale(1.5);
+    width: 100%;
+} */
+
+@media (max-width: 1160px) {
+    .berlian-grid {
+        margin: 0 150px;
+    }
+}
+
+@media (max-width: 767px) {
+
+    .berlian-grid {
+        width: 100%;
+        margin: 0 20px;
+    }
+}
+
+@media (max-width: 576px) {
+    
+}

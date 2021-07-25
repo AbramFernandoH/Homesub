@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Request Subtitle Admin Page</title>
+  <script src="firebase.js"></script>
+	<script src="jquery-3.2.1.slim.min.js"></script>
+	<script src="bootstrap.min.js"></script>
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="font-awesome.min.css" >
+  <link rel="stylesheet" href="css/adminStyle.css">
+</head>
+<body onload="getdata()">
+  <div class="reqAdmin-table">
+    <br>
+    <div class="row no-gutters">
+      <div class="col align-self-center"><h3 class="text-left"><i class="fa fa-home reqAdmin-home-logo" onclick="getdata()"></i>Users Subtitle Request Table</h3></div>
+    </div>
+    
+    <table id="userReq" class="table table-striped table-bordered table-hover">
+    <thead  class="thead-dark">
+      <tr>
+          <th scope="col">Name</th>
+          <th scope="col">Movies Request</th> 
+          <th scope="col">Message</th>
+        </tr>
+      </thead>
+      <tbody>
+        
+      </tbody>
+    </table>
+  </div>
+
+  <a href="halamanAdmin.html" class="tombolPindah text-white" id="toReqAdmin"><p>Go Back</p></a>
+
+  <script>
+    // Your web app's Firebase configuration
+    var firebaseConfig = {
+      apiKey: "AIzaSyCg65UUPoXEyJKf7Zuck694S9XN0cBlSbM",
+      authDomain: "homesub2020.firebaseapp.com",
+      databaseURL: "https://homesub2020.firebaseio.com",
+      projectId: "homesub2020",
+      storageBucket: "homesub2020.appspot.com",
+      messagingSenderId: "986924595251",
+      appId: "1:986924595251:web:834443addf088f5b748b46",
+      measurementId: "G-G2BLCQCD30"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    firebase.analytics();
+
+    function getdata() {
+    // get posts div
+    var dbRef = firebase.database();
+		var requestt = dbRef.ref("RequestSub/");
+    var rekuest = document.getElementById("userReq").getElementsByTagName('tbody')[0];
+    
+    $("#userReq").find("tr:gt(0)").remove();
+    
+    requestt.on("child_added", function(data, prevChildKey) {
+    var hsReqSubs = data.val();
+
+    var row = rekuest.insertRow(rekuest.rows.length);
+
+    var cell1 = row.insertCell(0);
+    var cell2 = row.insertCell(1);
+    var cell3 = row.insertCell(2);
+
+    cell1.innerHTML = hsReqSubs.name; 
+    cell2.innerHTML = hsReqSubs.movies;
+    cell3.innerHTML = hsReqSubs.message; 
+ });
+}
+
+  firebase.auth().onAuthStateChanged(function(user) {
+    var user = firebase.auth().currentUser;
+
+    if (user == null) {
+      // No User is signed in.
+      window.location = "login.html"
+    } else {
+      // User is signed in.
+    }
+  });
+  </script>
+</body>
+</html>

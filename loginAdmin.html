@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="requestStyle.css">
+    <link rel="stylesheet" href="css/stylehalUt.css">
+    <title>Login Admin</title>
+  </head>
+  <body>
+    <section class="s1">
+      <div class="semua">
+        <div class="bingkai">
+          <div class="membungkus">
+            <form name="mintaForm" action="#" method="post">
+            <h2 class="mb-5">Login HomeSub Admin</h2>
+            <div class="baris100">
+              <div class="kolom">
+                <div class="isikan">
+                  <input id="emailAdminHS" type="email" name="emailAdminHS">
+                  <span class="teks">Email</span>
+                  <span class="garis"></span>
+                </div>
+              </div>
+              <div class="kolom">
+                <div class="isikan">
+                  <input id="passwordAdmin" type="password">
+                  <span class="teks">Password</span>
+                  <span class="garis"></span>
+                </div>
+              </div>
+            </div>
+            
+          </form>
+          <div class="baris100">
+            <div class="kolom">
+              <button id="loginAdminHS" name="loginAdminHS">Login</button>
+            </div>
+          </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+  <script src="https://www.gstatic.com/firebasejs/7.16.0/firebase.js"></script>
+
+  <script>
+    // Your web app's Firebase configuration
+    var firebaseConfig = {
+      apiKey: "AIzaSyCg65UUPoXEyJKf7Zuck694S9XN0cBlSbM",
+      authDomain: "homesub2020.firebaseapp.com",
+      databaseURL: "https://homesub2020.firebaseio.com",
+      projectId: "homesub2020",
+      storageBucket: "homesub2020.appspot.com",
+      messagingSenderId: "986924595251",
+      appId: "1:986924595251:web:834443addf088f5b748b46",
+      measurementId: "G-G2BLCQCD30"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    firebase.analytics();
+  </script>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+    <script src="loginAdmin.js"></script>
+  </body>
+</html>

@@ -1,0 +1,67 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700,800&display=swap');
+
+* {
+    font-family: 'Poppins', sans-serif;
+}
+
+.judlForm {
+  font-size: 30px;
+  font-weight: 800;
+  margin: 20px 0;
+}
+
+.tombolKeluar{
+  background-color: rgb(255, 154, 21);
+    display: block;
+    width: 70px;
+    height: 70px;
+    line-height: 70px;
+    text-align: center;
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    text-decoration: none;
+    transition: ease all 0.3s;
+    position: fixed;
+    right: 10%;
+    bottom: 7%;
+    border: none;
+}
+
+.tombolPindah{
+  background-color: rgb(255, 154, 21);
+    display: block;
+    width: 70px;
+    height: 70px;
+    line-height: 70px;
+    text-align: center;
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    text-decoration: none;
+    transition: ease all 0.3s;
+    position: fixed;
+    right: 10%;
+    bottom: 25%;
+    border: none;
+}
+
+.tombolPindah p{
+  text-decoration: none;
+}
+
+#post-form h3, #post-form p{
+  align-items: center;
+}
+
+.reqAdmin-table{
+  padding: 100px;
+}
+
+.reqAdmin-home-logo{
+  cursor: pointer;
+}

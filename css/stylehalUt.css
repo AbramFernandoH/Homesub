@@ -1,0 +1,197 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700,800&display=swap');
+
+* {
+    font-family: 'Poppins', sans-serif;
+}
+
+/* navbar */
+
+.navbar {
+    padding-right: 10%;
+    padding-left: 10%;
+    opacity: 0.7;
+    display: flex;
+    justify-content: space-around;
+}
+
+.navbar:hover {
+    opacity: 1;
+    transition: .5s;
+}
+
+.dropdown a.dropdown-toggle {
+    transition: 0.5s;
+}
+
+.navTop{
+    background-color: rgb(255, 154, 21);
+}
+
+/* navbar selesai */
+
+/* carousel */
+
+.carousel-caption p {
+    color: white;
+    text-shadow: 0 10px 10px rgba(0, 0, 0, 0.5);
+}
+
+.ukuran {
+    height: 600px;
+    overflow: hidden;
+}
+
+.carousel-caption h5 {
+    color: white;
+}
+
+.carousel-caption.satuu h5 {
+    margin-top: -25%;
+}
+
+.carousel-caption.duaa h5,
+.carousel-caption.tigaa h5 {
+    margin-top: -24%;
+}
+
+.satu img {
+    margin-top: -9%;
+}
+
+.dua img, .tiga img {
+    margin-top: -10%;
+}
+
+/* carousel selesai */
+
+/* card */
+
+.card a {
+    text-decoration: none;
+}
+
+.coklat {
+    color: chocolate;
+}
+
+.coklat:hover {
+    color: chocolate;
+}
+
+.card-text {
+    color: chocolate;
+}
+
+/* card selesai */
+
+/* footer */
+footer {
+	bottom: 0;
+	width: 100%;
+	height: 80px;
+	background-color: #333;
+	padding-top: 30px;
+}
+
+footer p {
+    color: white;
+    font-size: 18px;
+}
+
+/* footer selesai */
+
+/* Floating Button */
+.fabbBtn{
+    /* background: url(hs_search.png);
+    background-size: cover; */
+    background-color: rgb(255, 154, 21);
+    display: block;
+    width: 70px;
+    height: 70px;
+    line-height: 70px;
+    text-align: center;
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    text-decoration: none;
+    transition: ease all 0.3s;
+    position: fixed;
+    right: 10%;
+    bottom: 25%;
+    border: none;
+}
+
+.fabbBtn p{
+    text-decoration: none;
+}
+/* Floating Button selesai */
+
+/* Admin Button */
+.btnAdmin{
+    text-decoration: none;
+}
+/* Admin Button selesai */
+
+/* tombol download app */
+.tombolDA{
+    background-color: rgb(255, 154, 21);
+    font-size: 30px;
+    color: white;
+}
+/* tombol download app */
+
+/* Logout Button */
+.tombolKeluar{
+    background-color: rgb(255, 154, 21);
+    display: block;
+    width: 70px;
+    height: 70px;
+    line-height: 70px;
+    text-align: center;
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    text-decoration: none;
+    transition: ease all 0.3s;
+    position: fixed;
+    right: 10%;
+    bottom: 7%;
+}
+/* Logout Button */
+
+/* Login Page */
+.login-page{
+    background-color: orange;
+}
+
+.login-page .login-title{
+    margin-top: 20%;
+    font-size: 48px;
+}
+
+#btnGoogle{
+    height: 60px;
+    font-weight: 800;
+    font-size: 32px;
+    cursor: pointer;
+}
+
+/* Login PAge */
+
+/* media query */
+
+@media screen and (max-width: 1130px) {
+    .carousel-caption h5 {
+        margin-top: 0;
+    }
+}
+
+@media screen and (max-width: 1068px) {
+    .ukuran {
+        height: 100%;
+    }
+}

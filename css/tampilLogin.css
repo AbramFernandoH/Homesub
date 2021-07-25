@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700,800&display=swap');
+
+* {
+    font-family: 'Poppins', sans-serif;
+}
+
+body{
+  margin: 0;
+  padding: 0;
+  background-color: rgb(255, 153, 0);
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.tombolGoogle{
+  height: 40px; 
+  font-weight: 800; 
+  font-size: 17px; 
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* .lJudul{
+  text-align: center;
+  padding: 50px 0 20px;
+}
+.lJudul h1{
+  margin: 0;
+  padding: 0;
+  color: white;
+  text-transform: uppercase;
+  font-size: 36px;
+}
+.bingkai{
+  width: 50%;
+  height: 400px;
+  background: #fff;
+  margin: 0 auto;
+  border: 2px solid #fff;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5);
+}
+.bingkai .kirii{
+  float: left;
+  width: 50%;
+  height: 400px;
+  box-sizing: border-box;
+}
+.bingkai .kanann{
+  float: right;
+  width: 50%;
+  height: 400px;
+  box-sizing: border-box;
+}
+.formulirBox{
+  width: 100%;
+  padding: 40px 40px;
+  box-sizing: border-box;
+  height: 400px;
+  background: #fff;
+}
+.formulirBox p {
+  margin: 0;
+  padding: 0;
+  font-weight: bold;
+  color: orange;
+}
+.formulirBox input,
+.formulirBox button{
+  width: 100%;
+  margin-bottom: 20px;
+}
+.formulirBox input[type="text"],
+.formulirBox input[type="password"]{
+  border: none;
+  border-bottom: 2px solid orange;
+  outline: none;
+  height: 40px;
+}
+.formulirBox input[type="text"]:focus,
+.formulirBox input[type="password"]:focus {
+  border-bottom: 2px solid #262626;
+}
+.formulirBox .lgAdmin,
+.formulirBox .tombolGoogle {
+  border: none;
+  outline: none;
+  height: 40px;
+  color: #fff;
+  background: #262626;
+  font-weight: bold;
+  font-size: 20px;
+  cursor: pointer;
+}
+.formulirBox .lgAdmin:hover,
+.formulirBox .tombolGoogle:hover{
+  background: orange;
+} */

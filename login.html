@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/stylehalUt.css">
+  <link rel="stylesheet" href="css/browseStyle.css">
+
+  <title>Login Page</title>
+
+  
+</head>
+<body class="login-page">
+    <div class="container">
+      <h3 class="text-center text-white judul login-title">Sign In to HomeSub</h3>
+      <div class="kartu">
+        <div class="pembungkus">
+          <button id="btnGoogle" class="tombolGoogle">Sign In with Google</button>
+        </div>
+      </div>
+    </div>
+  
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+  <script src="https://www.gstatic.com/firebasejs/7.16.0/firebase.js"></script>
+
+  <script>
+    // Your web app's Firebase configuration
+    var firebaseConfig = {
+      apiKey: "AIzaSyCg65UUPoXEyJKf7Zuck694S9XN0cBlSbM",
+      authDomain: "homesub2020.firebaseapp.com",
+      databaseURL: "https://homesub2020.firebaseio.com",
+      projectId: "homesub2020",
+      storageBucket: "homesub2020.appspot.com",
+      messagingSenderId: "986924595251",
+      appId: "1:986924595251:web:834443addf088f5b748b46",
+      measurementId: "G-G2BLCQCD30"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    firebase.analytics();
+
+    const btnMasuk = document.getElementById('btnGoogle');
+
+    btnMasuk.addEventListener('click', function() {
+    const provider = new firebase.auth.GoogleAuthProvider();
+    firebase.auth().signInWithPopup(provider).then(function(){
+      window.location = "halamanUtama.html";
+    }).catch(function (error) {
+      const pesanError = error.message;
+      alert(pesanError);
+    })
+    });    
+  </script>
+</body>
+</html>

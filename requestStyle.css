@@ -1,0 +1,179 @@
+body, html {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .s1 {
+    background: url(RiverReq.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  h1 {
+    background: white;
+    color: #333;
+    padding: 10px 20px;
+    font-size: 40px;
+    text-transform: uppercase;
+  }
+  
+  @import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700,800&display=swap');
+  
+  form {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      width: 100%;
+  }
+  
+  .semua {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+      width: 55%;
+  }
+  
+  .bingkai {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+  }
+  
+  .membungkus {
+      width: 100%;
+      padding: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+  }
+  
+  .membungkus h2 {
+      width: 100%;
+      color: #f8992d;
+      font-size: 36px;
+      text-align: center;
+      margin-bottom: 10px;
+  }
+
+  .membungkus p {
+    color: red;
+  }
+  
+  .membungkus .baris100 {
+      position: relative;
+      width: 100%;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  }
+  
+  .membungkus .baris100 .kolom {
+      position: relative;
+      width: 100%;
+      padding: 0 10px;
+      margin: 30px 0 10px;
+      transition: 0.5s;
+  }
+  
+  .membungkus .baris100 .isikan {
+      position: relative;
+      width: 100%;
+      height: 40px;
+      color: #f8992d;
+  }
+  
+  .membungkus .baris100 .isikan input,
+  .membungkus .baris100 .isikan.teksarea textarea {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: transparent;
+      box-shadow: none;
+      border: none;
+      outline: none;
+      font-size: 18px;
+      padding: 0 10px;
+      z-index: 1;
+      color: white;
+      font-weight: bolder;
+  }
+  
+  .membungkus .baris100 .isikan .teks {
+      position: absolute;
+      top: 0;
+      left: 0;
+      line-height: 40px;
+      font-size: 18px;
+      padding: 0 10px;
+      display: block;
+      transition: 0.5s;
+      pointer-events: none;
+  }
+  
+  .membungkus .baris100 .isikan input:focus + .teks,
+  .membungkus .baris100 .isikan input:valid + .teks { 
+      top: -35px;
+      left: -10px;
+  }
+  
+  .membungkus .baris100 .isikan .garis {
+      position: absolute;
+      bottom: 0;
+      display: block;
+      width: 100%;
+      height: 2px;
+      background: #f8992d;
+      transition: 0.5s;
+      border-radius: 2px;
+      pointer-events: none;
+  }
+  
+  .membungkus .baris100 .isikan input:focus ~ .garis,
+  .membungkus .baris100 .isikan input:valid ~ .garis {
+      height: 100%;
+  }
+  
+  .membungkus .baris100 .isikan.teksarea {
+      position: relative;
+      width: 100%;
+      height: 100px;
+      padding: 10px 0;
+  }
+  
+  .membungkus .baris100 .isikan.teksarea textarea {
+      height: 100%;
+      resize: none;
+  }
+  
+  .membungkus .baris100 .isikan textarea:focus + .teks,
+  .membungkus .baris100 .isikan textarea:valid + .teks {
+      top: -35px;
+      left: -10px;
+  }
+  
+  .membungkus .baris100 .isikan textarea:focus ~ .garis,
+  .membungkus .baris100 .isikan textarea:valid ~ .garis {
+      height: 100%;
+  }
+  
+  button {
+      border: none;
+      padding: 7px 35px;
+      cursor: pointer;
+      background: #f8992d;
+      font-weight: bolder;
+      color: white;
+      font-size: 18px;
+      border-radius: 40px;
+  }

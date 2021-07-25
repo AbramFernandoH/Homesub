@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Admin Page</title>
+
+  <!-- Bootstrap CDN -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.min.css">
+  <script defer src="https://use.fontawesome.com/releases/v5.0.0/js/all.js"></script>
+  <link rel="stylesheet" href="css/adminStyle.css">
+</head>
+<body>
+
+  <div class="container mt-2">
+    <h1 class="judlForm text-center">Create Data Form</h1>
+    <div class="card">
+      <div class="card-body">
+        <form id="post-form">
+          <h3>Title</h3>
+          <textarea id="post" class="form-control"></textarea>
+          <p>Description</p>
+          <textarea class="form-control" id="deskripsi"></textarea>
+          <p>Genre</p>
+          <input type="text" class="form-control" id="kategori">
+          <p>Release Date</p>
+          <input type="text" class="form-control" id="tglRilis">
+          <p>Directors</p>
+          <input type="text" class="form-control" id="direktor">
+          <p>Cast</p>
+          <input type="text" class="form-control" id="cast">
+          <p class="mt-2">Poster Image</p>
+          <input type="text" class="form-control" id="image">
+          <p class="mb-2">Subtitle File URL</p>
+          <input type="file" id="hsSubs" class="form-control mt-2 mb-2" accept=".rar, .zip">
+            <div class="text-center mt-2">
+              <button id="tUpload" type="button" class="btn btn-success">Upload</button>
+            </div>
+            <div class="text-center mt-2">
+              <input type="text" id="cariTF" class="form-control cari">
+              <button id="cariSub" type="button" class="btn btn-dark mt-2" onclick="mencari_data()">Search</button>
+            </div>
+        </form>
+      </div>
+    </div>
+    <div class="row mt-4" id="posts">
+      <section id="seksion">
+
+      </section>
+    </div>
+    <div id="modal" class="modal">
+      <div class="modal-background"></div>
+      <div class="modal-card">
+        <header class="modal-card-head">
+          <p class="modal-card-title">Update Data</p>
+          <button class="tmblTutup delete" aria-label="close"></button>
+        </header>
+        <section class="modal-card-body">
+          <div class="field">
+            <label class="label">Title</label>
+            <div class="control">
+              <input type="hidden" id="txtType">
+              <input type="hidden" id="txtKey">
+              <input class="input" id="hsJudul" type="text" placeholder="Name">
+            </div>
+            <p class="help"> </p>
+          </div>
+          <div class="field">
+            <label class="label">Description</label>
+            <div class="control">
+              <input type="hidden" id="txtType">
+              <input type="hidden" id="txtKey">
+              <input class="input" id="hsDeskripsi" type="text" placeholder="Name">
+            </div>
+            <p class="help"> </p>
+          </div>
+          <div class="field">
+            <label class="label">Genre</label>
+            <div class="control">
+              <input type="hidden" id="txtType">
+              <input type="hidden" id="txtKey">
+              <input class="input" id="hsKategori" type="text" placeholder="Name">
+            </div>
+            <p class="help"> </p>
+          </div>
+          <div class="field">
+            <label class="label">Release Date</label>
+            <div class="control">
+              <input type="hidden" id="txtType">
+              <input type="hidden" id="txtKey">
+              <input class="input" id="hsRilis" type="text" placeholder="Name">
+            </div>
+            <p class="help"> </p>
+          </div>
+          <div class="field">
+            <label class="label">Directors</label>
+            <div class="control">
+              <input type="hidden" id="txtType">
+              <input type="hidden" id="txtKey">
+              <input class="input" id="hsDirektor" type="text" placeholder="Name">
+            </div>
+            <p class="help"> </p>
+          </div>
+          <div class="field">
+            <label class="label">Cast</label>
+            <div class="control">
+              <input type="hidden" id="txtType">
+              <input type="hidden" id="txtKey">
+              <input class="input" id="hsCast" type="text" placeholder="Name">
+            </div>
+            <p class="help"> </p>
+          </div>
+          <div class="field">
+            <label class="label">Subtitle Link</label>
+            <div class="control">
+              <input type="hidden" id="txtType">
+              <input type="hidden" id="txtKey">
+              <input class="input" id="hsSubtitle" type="text" placeholder="Name">
+            </div>
+            <p class="help"> </p>
+          </div>
+        </section>
+        <footer class="modal-card-foot">
+          <button id="hsBtnSimpan" class="button is-success" onclick="updateData_Proses()">Save changes</button>
+          <button id="tbTutup" class="button">Cancel</button>
+        </footer>
+      </div>
+    </div>
+  </div>
+
+  <a href="reqAdmin.html" class="tombolPindah text-white" id="toReqAdmin"><p>Req</p></a>
+  <button class="tombolKeluar text-white" id="btnKeluar"><p>Logout</p></button>
+  
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+  <script src="https://www.gstatic.com/firebasejs/7.16.0/firebase.js"></script>
+
+  <script>
+    // Your web app's Firebase configuration
+    var firebaseConfig = {
+      apiKey: "AIzaSyCg65UUPoXEyJKf7Zuck694S9XN0cBlSbM",
+      authDomain: "homesub2020.firebaseapp.com",
+      databaseURL: "https://homesub2020.firebaseio.com",
+      projectId: "homesub2020",
+      storageBucket: "homesub2020.appspot.com",
+      messagingSenderId: "986924595251",
+      appId: "1:986924595251:web:834443addf088f5b748b46",
+      measurementId: "G-G2BLCQCD30"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    firebase.analytics();
+  </script>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+  <script src="hsAdmin.js"></script>
+</body>
+</html>
